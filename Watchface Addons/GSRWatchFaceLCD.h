@@ -806,11 +806,14 @@ class GSRWatchFaceLCD : public WatchyGSR {
            if (SafeToDraw()){
                 if (NoMenu()){
                     drawTime(96); // Pad + no AM.
-                    if (IsAM()){
+                    {
                         display.setFont(&TRAN6pt7b);
                         setFontColor(Design.Face.TimeColor);
                         display.setCursor(180, Design.Face.Time - (Design.Face.TimeHeight + 22));
-                        display.print("AM");
+                        if (IsAM())
+                            display.print("AM");
+                        else
+                            display.print("PM");
                     }
                 }
                 drawDay();

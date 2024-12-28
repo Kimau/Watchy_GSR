@@ -11,6 +11,7 @@
 #include "Web-HTML.h"
 #include <ArduinoJson.h>
 #include <esp_partition.h>
+#include <esp_random.h>
 #include <ESPmDNS.h>
 #include <mbedtls/base64.h>
 #include "esp_chip_info.h"
